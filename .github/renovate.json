@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "enabledManagers": ["gradle"],
+  "gradle": {
+    "enabled": true
+  },
+  "dependencyDashboard": true,
+  "automerge": false,
+  "labels": ["dependencies"],
+  "schedule": ["before 3am on Monday"],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": ["org.jetbrains.kotlin"],
+      "groupName": "Kotlin dependencies"
+    },
+    {
+      "matchPackagePatterns": ["gradle-plugin"],
+      "groupName": "Gradle Plugins"
+    }
+  ]
+}
