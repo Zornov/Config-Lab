@@ -50,7 +50,6 @@ data class DatabaseConfig(
 suspend fun main() {
     val source = FileConfigSource(Paths.get("config"))
 
-    // YAML: создаёт server.yml
     val yamlManager = ConfigManager(YamlConfigFormat(), source)
     yamlManager.create("server.yml", ServerConfig())
     val loadedYaml = yamlManager.load<ServerConfig>("server")
