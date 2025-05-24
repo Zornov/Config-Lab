@@ -1,21 +1,33 @@
 {
-  "extends": ["config:base"],
-  "enabledManagers": ["gradle"],
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "gradle"
+  ],
   "gradle": {
     "enabled": true
   },
   "dependencyDashboard": true,
   "automerge": false,
-  "labels": ["dependencies"],
-  "schedule": ["before 3am on Monday"],
+  "labels": [
+    "dependencies"
+  ],
+  "schedule": [
+    "before 3am on Monday"
+  ],
   "packageRules": [
     {
-      "matchPackagePrefixes": ["org.jetbrains.kotlin"],
-      "groupName": "Kotlin dependencies"
+      "groupName": "Kotlin dependencies",
+      "matchPackageNames": [
+        "org.jetbrains.kotlin{/,}**"
+      ]
     },
     {
-      "matchPackagePatterns": ["gradle-plugin"],
-      "groupName": "Gradle Plugins"
+      "groupName": "Gradle Plugins",
+      "matchPackageNames": [
+        "/gradle-plugin/"
+      ]
     }
   ]
 }
