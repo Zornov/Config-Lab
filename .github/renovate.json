@@ -9,6 +9,7 @@
     "enabled": true
   },
   "dependencyDashboard": true,
+  "dependencyDashboardApproval": false,
   "automerge": false,
   "labels": [
     "dependencies"
@@ -16,18 +17,12 @@
   "schedule": [
     "before 3am on Monday"
   ],
+  "prConcurrentLimit": 1,
+  "prHourlyLimit": 1,
   "packageRules": [
     {
-      "groupName": "Kotlin dependencies",
-      "matchPackageNames": [
-        "org.jetbrains.kotlin{/,}**"
-      ]
-    },
-    {
-      "groupName": "Gradle Plugins",
-      "matchPackageNames": [
-        "/gradle-plugin/"
-      ]
+      "groupName": "All dependencies",
+      "matchUpdateTypes": ["major", "minor", "patch"]
     }
   ]
 }

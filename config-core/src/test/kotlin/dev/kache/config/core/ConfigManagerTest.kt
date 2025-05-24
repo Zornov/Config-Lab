@@ -49,7 +49,7 @@ class ConfigManagerTest {
         val config = TestConfig(maxPlayers = 100)
 
         manager.save("valid.txt", config)
-        val loaded = manager.load<TestConfig>("valid.txt")
+        val loaded = manager.load<TestConfig>("valid.txt", config)
 
         println("[RESULT] Loaded config: $loaded")
         assertEquals(100, loaded.maxPlayers)
@@ -62,7 +62,7 @@ class ConfigManagerTest {
         source.write("bad.txt", bad)
 
         val ex = assertFailsWith<IllegalStateException> {
-            manager.load<TestConfig>("bad.txt")
+            manager.load<TestConfig>("bad.txt", TestConfig())
         }
 
         println("[EXPECTED FAILURE] ${ex.message}")

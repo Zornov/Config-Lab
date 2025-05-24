@@ -1,4 +1,5 @@
 plugins {
+    id("dev.kache.config.sensitive") version "1.0"
     application
 }
 
