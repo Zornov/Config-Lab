@@ -42,6 +42,9 @@ dependencies {
 
     // YAML formatter
     implementation("dev.zornov.config.format:yml:1.0")
+    
+    // Or you can use Json formatter
+    // implementation("dev.zornov.config.format:json:1.0")
 }
 ````
 
@@ -126,22 +129,30 @@ logging:
 ```kotlin
 suspend fun main() {
     val source = FileConfigSource(Paths.get("config"))
-    val format = YamlConfigFormat()
-    val manager = ConfigManager(format, source)
 
-    // Save default configuration
-    manager.create("server.yml", ServerConfig())
+    // You can use either YAML or JSON
+    val yaml = ConfigManager(YamlConfigFormat(), source)
+    val json = ConfigManager(JsonConfigFormat(), source)
 
-    // Load config
-    val cfg = manager.load<ServerConfig>("server")
+    // Save defaults (only needed once)
+    yaml.create("server.yml", ServerConfig()) // Or simply : yaml.create("server", ServerConfig())
+    json.create("server.json", ServerConfig()) // Or simply : json.create("server", ServerConfig())
 
-    println("Max players = ${cfg.maxPlayers}")        // 20
-    println("Password (unsafe) = ${cfg.password}")    // ***
+    // Load YAML
+    val cfgYml = yaml.load<ServerConfig>("server")
+    println("[YAML] Max players = ${cfgYml.maxPlayers}")  // 20
 
+    // Load JSON
+    val cfgJson = json.load<ServerConfig>("server")
+    println("[JSON] Max players = ${cfgJson.maxPlayers}") // 20
+
+    // Sensitive printing
     withSafe {
-        println("Password (safe) = ${cfg.password}")  // 1
+        println("[YAML] Password = ${cfgYml.password}")
+        println("[JSON] Password = ${cfgJson.password}")
     }
 }
+
 ```
 
 ---

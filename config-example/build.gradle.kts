@@ -17,7 +17,10 @@ dependencies {
     implementation(project(":config-annotations"))
 
     // YAML formatter
-    implementation(project(":config-format-yaml"))
+    implementation(project(":config-format:config-format-yaml"))
+
+    // Json formatter
+    implementation(project(":config-format:config-format-json"))
 }
 
 application {

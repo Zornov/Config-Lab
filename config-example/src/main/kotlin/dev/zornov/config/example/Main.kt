@@ -4,6 +4,7 @@ import dev.zornov.config.annotations.*
 import dev.zornov.config.annotations.sensetive.withSafe
 import dev.zornov.config.core.ConfigManager
 import dev.zornov.config.core.source.FileConfigSource
+import dev.zornov.config.format.json.JsonConfigFormat // Новый импорт
 import dev.zornov.config.format.yaml.YamlConfigFormat
 import kotlinx.serialization.Serializable
 import java.nio.file.Paths
@@ -48,19 +49,23 @@ data class DatabaseConfig(
 
 suspend fun main() {
     val source = FileConfigSource(Paths.get("config"))
-    val format = YamlConfigFormat()
 
-    val manager = ConfigManager(format, source)
-
-    manager.create("server.yml", ServerConfig())
-
-    val loaded = manager.load<ServerConfig>("server")
-
-    println(loaded.password)
+    // YAML: создаёт server.yml
+    val yamlManager = ConfigManager(YamlConfigFormat(), source)
+    yamlManager.create("server.yml", ServerConfig())
+    val loadedYaml = yamlManager.load<ServerConfig>("server")
+    println("[YAML] Loaded password: ${loadedYaml.password}")
 
     withSafe {
-        println(loaded.password)
+        println("[YAML] Safe password: ${loadedYaml.password}")
     }
 
-    println(loaded)
+    val jsonManager = ConfigManager(JsonConfigFormat(), source)
+    jsonManager.create("server.json", ServerConfig())
+    val loadedJson = jsonManager.load<ServerConfig>("server")
+    println("[JSON] Loaded password: ${loadedJson.password}")
+
+    withSafe {
+        println("[JSON] Safe password: ${loadedJson.password}")
+    }
 }
