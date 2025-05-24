@@ -17,9 +17,8 @@ Validation, (de)serialization, comments, secure redaction, and backward-compatib
 |---------|--------------|
 | **Declarative models** | Plain Kotlin `data class` + `@Serializable`. |
 | **Validation** | `@Required`, `@Range`, custom validators. |
-| **Aliases** | `@Alias("oldName", "legacyName")` keeps old files working after refactors. | TODO |
 | **Sensitive redaction** | `@Sensitive` hides secrets outside of `withSafe { }` blocks. |
-| **Rich comments** | `@Comment`, `@CommentBlock` are persisted to the file. |
+| **Rich comments** | `@Comment` are persisted to the file. |
 | **Format-agnostic** | YAML |
 | **Multiple sources** | File, other — implement one interface. |
 
