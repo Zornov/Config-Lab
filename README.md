@@ -51,6 +51,12 @@ dependencies {
 
 ---
 
+### Full example can be found in the [`config-example`](https://github.com/KachVev/Config-Lab/tree/main/config-example) module
+
+Browse the example to see how to define configs, load them, and safely use sensitive data in a Kotlin application.
+
+---
+
 ### Define a Configuration Model
 
 ```kotlin
@@ -83,11 +89,11 @@ suspend fun main() {
     // Load config
     val cfg = manager.load<TestConfig>("config.yml")
 
-    println("Max players = ${cfg.maxPlayers}")        // 20
-    println("Password (unsafe) = ${cfg.password}")    // redacted
+    println("Max players = ${cfg.maxPlayers}")        // Will output 20
+    println("Password (unsafe) = ${cfg.password}")    // Will output ***
     
     withSafe {
-        println("Password (safe) = ${cfg.password}")  // "secret"
+        println("Password (safe) = ${cfg.password}")  // Will output "secret"
     }
 }
 ```
