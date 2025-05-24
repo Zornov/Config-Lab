@@ -2,11 +2,11 @@
 
 > **Annotation-driven, type-safe configuration for Kotlin/JVM**
 
-[![config-annotations](https://jitpack.io/v/com.github.KachVev.Config-Lab/config-annotations.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
-[![config-core](https://jitpack.io/v/com.github.KachVev.Config-Lab/config-core.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
-[![config-yml](https://jitpack.io/v/com.github.KachVev.Config-Lab/config-yml.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
-[![sensitive-plugin](https://jitpack.io/v/com.github.KachVev.Config-Lab/sensitive-gradle-plugin.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
-[![kotlin-plugin](https://jitpack.io/v/com.github.KachVev.Config-Lab/kotlin-plugin.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
+[![config-annotations](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.annotations/config-annotations/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
+[![config-core](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-core/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
+[![config-yml](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-yml/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
+[![sensitive-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/sensitive-gradle-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
+[![kotlin-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/kotlin-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
 
 [![License](https://img.shields.io/github/license/KachVev/Config-Lab)](LICENSE)
 
