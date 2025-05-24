@@ -12,12 +12,9 @@
 
 | Feature                 | Description                                                                                                 |
 |-------------------------|-------------------------------------------------------------------------------------------------------------|
-| **Declarative models**  | Plain Kotlin `data class` + `@Serializable`.                                                                |
-| **Validation**          | Built-in validation via `@Required`, `@Range`, or custom annotations.                                       |
+| **Validation**          | Built-in validation via `@Required`, `@Range`.                                                              |
 | **Sensitive redaction** | Redacts `@Sensitive` fields unless explicitly revealed inside `withSafe {}`. Works only with Gradle plugin. |
 | **Rich comments**       | Support for inline (`@Comment(..., INLINE)`) and block-level (`@CommentBlock`) YAML comments.               |
-| **Nested comments**     | Automatically places comments above nested `data class` blocks — supported via annotation or class-level.   |
-| **Aliases**             | Support for legacy field names via `@Alias("oldName")`.                                                     |
 | **Pluggable formats**   | YAML support via module; other formats can be plugged in.                                                   |
 | **Multiple sources**    | Load from files or any custom source implementation.                                                        |
 
@@ -54,7 +51,7 @@ dependencies {
 
 ## Full example
 
-Browse the [`config-example`](https://github.com/KachVev/Config-Lab/tree/main/config-example) module to see complete usage with validation, comments, and nested blocks.
+Browse the [`config-example`](https://github.com/Zornoov/Config-Lab/tree/main/config-example) module to see complete usage with validation, comments, and nested blocks.
 
 ---
 
@@ -149,7 +146,7 @@ suspend fun main() {
 
 ---
 
-## 🧩 Supported Annotations
+## Supported Annotations
 
 | Annotation                   | Target              | Description                                                                                         |
 |------------------------------|---------------------|-----------------------------------------------------------------------------------------------------|
@@ -157,7 +154,6 @@ suspend fun main() {
 | `@CommentBlock("text")`      | `CLASS`, `PROPERTY` | Adds a block comment above an entire YAML section (nested `data class`).                            |
 | `@Required`                  | `PROPERTY`          | Ensures the value is present when loading config. Throws error if missing.                          |
 | `@Range(min, max)`           | `PROPERTY`          | Validates that numeric values are within the given range.                                           |
-| `@Alias("...")`              | `PROPERTY`          | Allows deserialization from legacy or alternative field names.                                      |
 | `@Sensitive`                 | `PROPERTY`          | Masks the field’s value when printed (`toString()`) or logged.                                      |
 | `withSafe { ... }`           | Code block          | Temporarily reveals sensitive values inside the block.                                              |
 
