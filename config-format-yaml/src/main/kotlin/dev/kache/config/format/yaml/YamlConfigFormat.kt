@@ -13,7 +13,9 @@ import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.memberProperties
 
 class YamlConfigFormat : ConfigFormat {
-    val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = true))
+    val yaml = Yaml(
+        configuration = YamlConfiguration(encodeDefaults = true)
+    )
 
     override val prefix: String = "#"
     override val fileExtension: String = "yml"

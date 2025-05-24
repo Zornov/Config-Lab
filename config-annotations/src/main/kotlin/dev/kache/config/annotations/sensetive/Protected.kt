@@ -3,8 +3,8 @@ package dev.kache.config.annotations.sensetive
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
-@Serializable(with = ProtectedSerializer::class)
-data class Protected<T : Any>(val value: T) : Number() {
+@Serializable(with = ProtectedStringSerializer::class)
+data class Protected<T>(val value: T) : Number() {
 
     inline fun <N> reveal(real: () -> N, fake: () -> N): N =
         if (isSafe() && value is Number) real() else fake()

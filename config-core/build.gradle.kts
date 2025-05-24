@@ -5,11 +5,6 @@ plugins {
 group = "dev.kache.config"
 version = "1.0"
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencies {
     implementation(project(":config-annotations"))
     implementation(kotlin("reflect"))

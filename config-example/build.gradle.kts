@@ -1,10 +1,25 @@
-group = "dev.kache.config.example"
+plugins {
+    application
+}
+
+group = "dev.kache.config"
 version = "1.0"
 
 repositories {
-    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    // Core
+    implementation(project(":config-core"))
+
+    // Annotations
+    implementation(project(":config-annotations"))
+
+    // YAML formatter
+    implementation(project(":config-format-yaml"))
+}
+
+application {
+    mainClass.set("dev.kache.config.example.MainKt")
 }

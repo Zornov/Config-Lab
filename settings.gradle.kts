@@ -12,9 +12,9 @@ plugins {
 rootProject.name = "Config-lab"
 include("config-annotations")
 include("config-core")
+include("config-example")
 include("config-format-yaml")
 
 include("sensitive-plugin")
 include("sensitive-plugin:gradle-plugin")
 include("sensitive-plugin:kotlin-plugin")
-include("config-example")

@@ -1,28 +1,94 @@
-# Kache Config
+# ConfigLab
 
-> **Annotation-driven, type-safe configuration for Kotlin/JVM**
+[![GitHub stars](https://img.shields.io/github/stars/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/stargazers)
+[![License](https://img.shields.io/github/license/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/blob/main/LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/graphs/contributors)
 
-[![config-annotations](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.annotations/config-annotations/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518313)
-[![config-core](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-core/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518314)
-[![config-yml](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-yml/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518311)
-[![gradle-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/sensitive-gradle-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518303)
-[![kotlin-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/kotlin-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518301)
-
-[![License](https://img.shields.io/github/license/KachVev/Config-Lab)](LICENSE)
-
-**Kache Config** lets you declare your entire application configuration as a single `@Serializable` data-class, enrich it with simple annotations, and forget about boilerplate.  
-Validation, (de)serialization, comments, secure redaction, and backward-compatible renames come for free.
+> Annotation-driven, configuration library for Kotlin
 
 ---
 
-## ✨ Key Features
+## Features
 
-| Feature | What it does |
-|---------|--------------|
-| **Declarative models** | Plain Kotlin `data class` + `@Serializable`. |
-| **Validation** | `@Required`, `@Range`, custom validators. |
-| **Sensitive redaction** | `@Sensitive` hides secrets outside of `withSafe { }` blocks. |
-| **Rich comments** | `@Comment` are persisted to the file. |
-| **Format-agnostic** | YAML |
-| **Multiple sources** | File, other — implement one interface. |
+| Feature                 | Description                                                                                              |
+|-------------------------|----------------------------------------------------------------------------------------------------------|
+| **Declarative models**  | Plain Kotlin `data class` + `@Serializable`.                                                             |
+| **Validation**          | Built-in validation via `@Required`, `@Range`, or custom annotations.                                    |
+| **Sensitive redaction** | Redacts `@Sensitive` fields unless explicitly revealed inside `withSafe {}` Work only with gradle plugin |
+| **Rich comments**       | Support for inline and block YAML comments via `@Comment`                                                |
+| **Pluggable formats**   | YAML support via module; other formats can be plugged in.                                                |
+| **Multiple sources**    | Load from files or any custom source implementation.                                                     |
 
+---
+
+## Quickstart
+
+### Add Dependencies
+
+<details>
+<summary><strong>Gradle (Kotlin DSL)</strong></summary>
+
+```kotlin
+plugins {
+    // Enable @Sensitive support
+    id("dev.kache.config.sensitive") version "1.0" 
+}
+
+dependencies {
+    // Core runtime
+    implementation("dev.kache.config:core:1.0")
+
+    // Annotations
+    implementation("dev.kache.config:annotations:1.0")
+
+    // YAML formatter
+    implementation("dev.kache.config.format:yml:1.0")
+
+}
+```
+
+</details>
+
+---
+
+### Define a Configuration Model
+
+```kotlin
+@Serializable
+data class TestConfig(
+    @Required
+    @Range(min = 1.0, max = 100.0)
+    @Comment("Maximum number of players")
+    val maxPlayers: Int = 20,
+
+    @Sensitive
+    @Comment("Access password")
+    val password: String = "secret"
+)
+```
+
+---
+
+### Load & Use Config in Your App
+
+```kotlin
+suspend fun main() {
+    val source = FileConfigSource("Path to configurations")
+    val format = YamlConfigFormat()
+    val manager = ConfigManager(format, source)
+
+    // Save default configuration
+    manager.save("config.yml", TestConfig())
+
+    // Load config
+    val cfg = manager.load<TestConfig>("config.yml")
+
+    println("Max players = ${cfg.maxPlayers}")        // 20
+    println("Password (unsafe) = ${cfg.password}")    // redacted
+    
+    withSafe {
+        println("Password (safe) = ${cfg.password}")  // "secret"
+    }
+}
+```
+---
