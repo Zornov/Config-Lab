@@ -1,9 +1,8 @@
 plugins {
-    id("dev.kache.config.sensitive") version "1.0"
+    id("dev.zornov.config.sensitive") version "1.0"
     application
 }
 
-group = "dev.kache.config"
 version = "1.0"
 
 repositories {
@@ -22,5 +21,5 @@ dependencies {
 }
 
 application {
-    mainClass.set("dev.kache.config.example.MainKt")
+    mainClass.set("dev.zornov.config.example.MainKt")
 }

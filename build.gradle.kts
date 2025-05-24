@@ -7,6 +7,8 @@ subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
+    group = "dev.zornov.config"
+
     repositories {
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")

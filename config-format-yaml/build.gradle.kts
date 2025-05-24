@@ -2,7 +2,7 @@ plugins {
     `maven-publish`
 }
 
-group = "dev.kache.config.format"
+group = "dev.zornov.config.format"
 version = "1.0"
 
 repositories {
@@ -31,7 +31,7 @@ publishing {
             pom {
                 name.set("yml")
                 description.set("YML support library for sensitive configuration")
-                url.set("https://github.com/KachVev/Config-Lab")
+                url.set("https://github.com/Zornoov/Config-Lab")
                 licenses {
                     license {
                         name.set("Apache-2.0")
@@ -40,9 +40,8 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set("KachVev")
-                        name.set("Sasha Kachvev")
-                        email.set("kachevnikov.dev@gmail.com")
+                        id.set("Zornoov")
+                        name.set("Sasha Zornoov")
                     }
                 }
             }
@@ -52,7 +51,7 @@ publishing {
         mavenLocal()
         maven {
             name = "GitHubPackages"
-            url  = uri("https://maven.pkg.github.com/KachVev/Config-Lab")
+            url  = uri("https://maven.pkg.github.com/Zornoov/Config-Lab")
             credentials {
                 username = findProperty("gpr.user") as String
                 password = findProperty("gpr.key")  as String
