@@ -9,7 +9,7 @@ import org.jetbrains.kotlin.compiler.plugin.ExperimentalCompilerApi
 @AutoService(CommandLineProcessor::class)
 class SensitiveCommandLineProcessor : CommandLineProcessor {
     companion object {
-        const val PLUGIN_ID = "dev.kache.config.sensetive.kotlin"
+        const val PLUGIN_ID = "dev.zornov.config.sensetive.kotlin"
     }
 
     override val pluginId: String = PLUGIN_ID

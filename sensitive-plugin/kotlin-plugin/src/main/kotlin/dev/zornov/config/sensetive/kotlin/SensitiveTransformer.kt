@@ -20,8 +20,8 @@ class SensitiveTransformer(
     val ctx: IrPluginContext
 ) : IrElementTransformerVoidWithContext() {
 
-    val sensitiveAnn = FqName("dev.kache.config.annotations.Sensitive")
-    val protectedCid = ClassId.topLevel(FqName("dev.kache.config.annotations.sensetive.Protected"))
+    val sensitiveAnn = FqName("dev.zornov.config.annotations.Sensitive")
+    val protectedCid = ClassId.topLevel(FqName("dev.zornov.config.annotations.sensetive.Protected"))
     val cache = mutableMapOf<IrType, IrType>()
 
     fun IrProperty.isSensitive() = hasAnnotation(sensitiveAnn)

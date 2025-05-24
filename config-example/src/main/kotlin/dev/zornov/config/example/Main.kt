@@ -56,6 +56,8 @@ suspend fun main() {
 
     val loaded = manager.load<ServerConfig>("server")
 
+    println(loaded.password)
+
     withSafe {
         println(loaded.password)
     }

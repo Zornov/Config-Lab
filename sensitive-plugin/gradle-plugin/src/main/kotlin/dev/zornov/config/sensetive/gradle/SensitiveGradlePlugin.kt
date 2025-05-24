@@ -1,6 +1,7 @@
 package dev.zornov.config.sensetive.gradle
 
 import org.gradle.api.provider.Provider
+
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilation
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilerPluginSupportPlugin
 import org.jetbrains.kotlin.gradle.plugin.SubpluginArtifact
@@ -15,11 +16,11 @@ class SensitiveGradlePlugin : KotlinCompilerPluginSupportPlugin {
     }
 
     override fun getCompilerPluginId(): String =
-        "dev.kache.config.sensitive"
+        "dev.zornov.config.sensitive"
 
     override fun getPluginArtifact(): SubpluginArtifact =
         SubpluginArtifact(
-            groupId    = "dev.kache.config.sensitive",
+            groupId    = "dev.zornov.config.sensitive",
             artifactId = "kotlin-plugin",
             version    = BuildConfig.VERSION
         )
