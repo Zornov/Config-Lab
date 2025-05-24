@@ -2,9 +2,10 @@
 
 > **Annotation-driven, type-safe configuration for Kotlin/JVM**
 
-[![Maven Central](https://img.shields.io/maven-central/v/dev.kache/config-core?logo=kotlin&color=brightgreen)](https://central.sonatype.com/namespace/dev.kache)
-[![CI](https://github.com/<your-org>/kache-config/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-org>/kache-config/actions/workflows/ci.yml)
-[![License](https://img.shields.io/github/license/<your-org>/kache-config)](LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.kache.config.sensitive/config-core?logo=kotlin&color=brightgreen)](https://central.sonatype.com/namespace/dev.kache.config.sensitive)
+[![CI](https://github.com/KachVev/Config-Lab/actions/workflows/ci.yml/badge.svg)](https://github.com/KachVev/Config-Lab/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/blob/main/LICENSE)
+
 
 **Kache Config** lets you declare your entire application configuration as a single `@Serializable` data-class, enrich it with simple annotations, and forget about boilerplate.  
 Validation, (de)serialization, comments, secure redaction, and backward-compatible renames come for free.
