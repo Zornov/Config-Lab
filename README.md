@@ -2,11 +2,11 @@
 
 > **Annotation-driven, type-safe configuration for Kotlin/JVM**
 
-[![config-annotations](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.annotations/config-annotations/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
-[![config-core](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-core/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
-[![config-yml](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-yml/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
-[![sensitive-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/sensitive-gradle-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
-[![kotlin-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/kotlin-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages?package_type=maven)
+[![config-annotations](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.annotations/config-annotations/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518313)
+[![config-core](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-core/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518314)
+[![config-yml](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/config-yml/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518311)
+[![gradle-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/sensitive-gradle-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518303)
+[![kotlin-plugin](https://img.shields.io/maven-metadata/v/github/KachVev/Config-Lab/dev.kache.config.sensitive/kotlin-plugin/maven-metadata.xml)](https://github.com/KachVev/Config-Lab/packages/2518301)
 
 [![License](https://img.shields.io/github/license/KachVev/Config-Lab)](LICENSE)
 
