@@ -2,10 +2,13 @@
 
 > **Annotation-driven, type-safe configuration for Kotlin/JVM**
 
-[![Maven Central](https://img.shields.io/maven-central/v/dev.kache.config.sensitive/config-core?logo=kotlin&color=brightgreen)](https://central.sonatype.com/namespace/dev.kache.config.sensitive)
-[![CI](https://github.com/KachVev/Config-Lab/actions/workflows/ci.yml/badge.svg)](https://github.com/KachVev/Config-Lab/actions/workflows/ci.yml)
-[![License](https://img.shields.io/github/license/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/blob/main/LICENSE)
+[![config-annotations](https://jitpack.io/v/com.github.KachVev.Config-Lab/config-annotations.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
+[![config-core](https://jitpack.io/v/com.github.KachVev.Config-Lab/config-core.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
+[![config-yml](https://jitpack.io/v/com.github.KachVev.Config-Lab/config-yml.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
+[![sensitive-plugin](https://jitpack.io/v/com.github.KachVev.Config-Lab/sensitive-gradle-plugin.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
+[![kotlin-plugin](https://jitpack.io/v/com.github.KachVev.Config-Lab/kotlin-plugin.svg)](https://jitpack.io/#com.github.KachVev/Config-Lab)
 
+[![License](https://img.shields.io/github/license/KachVev/Config-Lab)](LICENSE)
 
 **Kache Config** lets you declare your entire application configuration as a single `@Serializable` data-class, enrich it with simple annotations, and forget about boilerplate.  
 Validation, (de)serialization, comments, secure redaction, and backward-compatible renames come for free.
