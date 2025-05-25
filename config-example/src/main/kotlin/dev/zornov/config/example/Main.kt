@@ -4,7 +4,7 @@ import dev.zornov.config.annotations.*
 import dev.zornov.config.annotations.sensetive.withSafe
 import dev.zornov.config.core.ConfigManager
 import dev.zornov.config.core.source.FileConfigSource
-import dev.zornov.config.format.json.JsonConfigFormat // Новый импорт
+import dev.zornov.config.format.json.JsonConfigFormat
 import dev.zornov.config.format.yaml.YamlConfigFormat
 import kotlinx.serialization.Serializable
 import java.nio.file.Paths
@@ -22,9 +22,9 @@ data class ServerConfig(
     @Comment("Access password (numeric)", position = Position.ABOVE)
     val password: Int = 1,
 
-    @CommentBlock("Database config (field-level comment block)")
     val database: DatabaseConfig = DatabaseConfig(),
 
+    @CommentBlock("Database config (field-level comment block)")
     val logging: LoggingConfig = LoggingConfig()
 )
 

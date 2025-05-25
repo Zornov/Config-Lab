@@ -24,8 +24,6 @@ class SensitiveTransformer(
     val protectedCid = ClassId.topLevel(FqName("dev.zornov.config.annotations.sensetive.Protected"))
     val cache = mutableMapOf<IrType, IrType>()
 
-    fun IrProperty.isSensitive() = hasAnnotation(sensitiveAnn)
-
     fun protect(orig: IrType): IrType =
         cache.getOrPut(orig) {
             ctx.referenceClass(protectedCid)
@@ -35,7 +33,7 @@ class SensitiveTransformer(
 
     @OptIn(UnsafeDuringIrConstructionAPI::class)
     override fun visitPropertyNew(declaration: IrProperty): IrStatement {
-        if (!declaration.isSensitive()) return super.visitPropertyNew(declaration)
+        if (!declaration.hasAnnotation(sensitiveAnn)) return super.visitPropertyNew(declaration)
         val field = declaration.backingField ?: return super.visitPropertyNew(declaration)
 
         val origType = field.type
