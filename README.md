@@ -196,4 +196,4 @@ suspend fun main() {
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/KachVev/Config-Lab/blob/main/LICENSE).
+This project is licensed under the [[Creative Commons Attribution-NonCommercial 4.0 International License](https://github.com/KachVev/Config-Lab/blob/main/LICENSE).
