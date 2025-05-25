@@ -1,8 +1,8 @@
 # ConfigLab
 
 [![GitHub stars](https://img.shields.io/github/stars/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/stargazers)
-[![License](https://img.shields.io/github/license/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/blob/main/LICENSE)
-[![Contributors](https://img.shields.io/github/contributors/KachVev/Config-Lab)](https://github.com/KachVev/Config-Lab/graphs/contributors)
+[![License](https://img.shields.io/badge/license-CC--BY--NC%204.0-blue)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.1.21-blue)](https://kotlinlang.org/)
 
 > Annotation-driven, configuration library for Kotlin
 
