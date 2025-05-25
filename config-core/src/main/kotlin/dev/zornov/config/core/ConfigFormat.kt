@@ -4,8 +4,6 @@ import kotlinx.serialization.KSerializer
 
 interface ConfigFormat {
     val prefix: String
-    val suffix: String
-        get() = ""
 
     val fileExtension: String
 

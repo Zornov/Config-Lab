@@ -11,6 +11,7 @@
   "dependencyDashboard": true,
   "dependencyDashboardApproval": false,
   "automerge": false,
+  "timezone": "Europe/Moscow",
   "labels": [
     "dependencies"
   ],
