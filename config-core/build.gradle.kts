@@ -23,12 +23,6 @@ publishing {
                 name.set("core")
                 description.set("Core library for sensitive configuration")
                 url.set("https://github.com/Zornoov/Config-Lab")
-                licenses {
-                    license {
-                        name.set("Apache-2.0")
-                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
-                    }
-                }
                 developers {
                     developer {
                         id.set("Zornoov")

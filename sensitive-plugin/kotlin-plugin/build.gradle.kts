@@ -23,12 +23,6 @@ publishing {
                 name.set("kotlin-plugin")
                 description.set("Kotlin compiler plugin for …")
                 url.set("https://github.com/Zornoov/Config-Lab")
-                licenses {
-                    license {
-                        name.set("Apache-2.0")
-                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
-                    }
-                }
                 developers {
                     developer {
                         id.set("Zornoov")
