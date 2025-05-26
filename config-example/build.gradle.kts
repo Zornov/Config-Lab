@@ -5,10 +5,6 @@ plugins {
 
 version = "1.0"
 
-repositories {
-    mavenLocal()
-}
-
 dependencies {
     // Core
     implementation(project(":config-core"))

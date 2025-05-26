@@ -5,11 +5,6 @@ plugins {
 group = "dev.zornov.config.format"
 version = "1.0"
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencies {
     implementation(project(":config-annotations"))
     implementation(project(":config-core"))
