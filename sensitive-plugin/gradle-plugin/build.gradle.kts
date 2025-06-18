@@ -18,7 +18,7 @@ gradlePlugin {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.2.0-RC2")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.2.0-RC3")
     compileOnly("com.google.auto.service:auto-service:1.1.1")
     kapt("com.google.auto.service:auto-service:1.1.1")
 }
