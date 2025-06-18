@@ -80,7 +80,6 @@ data class ServerConfig(
 )
 
 @Serializable
-@CommentBlock("Database connection settings")
 data class DatabaseConfig(
     @Comment("URL to connect to DB", position = Position.ABOVE)
     val url: String = "localhost",
