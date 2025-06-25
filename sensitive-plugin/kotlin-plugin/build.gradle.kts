@@ -8,7 +8,7 @@ version = "1.0"
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:2.1.21-329")
+    implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.0")
     compileOnly("com.google.auto.service:auto-service:1.1.1")
     kapt("com.google.auto.service:auto-service:1.1.1")
 }
