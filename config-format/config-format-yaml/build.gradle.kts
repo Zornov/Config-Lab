@@ -9,7 +9,7 @@ dependencies {
     implementation(project(":config-annotations"))
     implementation(project(":config-core"))
 
-    implementation("com.charleskorn.kaml:kaml:0.82.0")
+    implementation("com.charleskorn.kaml:kaml:0.83.0")
     implementation(kotlin("reflect"))
 
     testImplementation(kotlin("test"))
