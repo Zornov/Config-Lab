@@ -16,7 +16,7 @@ subprojects {
 
     dependencies {
         add("implementation",
-            "org.jetbrains.kotlinx:kotlinx-serialization-core:1.8.1")
+            "org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0")
         add("implementation",
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     }
