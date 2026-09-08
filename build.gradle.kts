@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.3.10" apply false
-    kotlin("plugin.serialization") version "2.3.10" apply false
+    kotlin("jvm") version "2.4.20" apply false
+    kotlin("plugin.serialization") version "2.4.20" apply false
 }
 
 subprojects {
@@ -16,8 +16,8 @@ subprojects {
 
     dependencies {
         add("implementation",
-            "org.jetbrains.kotlinx:kotlinx-serialization-core:1.10.0")
+            "org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0")
         add("implementation",
-            "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
     }
 }
